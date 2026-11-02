@@ -1,7 +1,24 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { connection } from "next/server";
 import { getPosts } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  openGraph: {
+    type: "website",
+    title: "Home | Simple Blog",
+    description: "A simple blog about server-side rendering and SEO.",
+    url: "/",
+    images: [{ url: "/hello%20world.jpeg", width: 1200, height: 655, alt: "Hello world" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Home | Simple Blog",
+    description: "A simple blog about server-side rendering and SEO.",
+    images: ["/hello%20world.jpeg"],
+  },
+};
 
 export default async function Home() {
   await connection();
@@ -15,8 +32,8 @@ export default async function Home() {
       <Image
         src="/hello%20world.jpeg"
         alt="A hello world sign above a laptop"
-        width={2816}
-        height={1536}
+        width={1200}
+        height={655}
         unoptimized
       />
       <h2>Blog posts</h2>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://9hhvhcd0sgrbfy9z.wt6.lambda-web.us-east-1.on.aws"),
   title: {
     default: "Home | Simple Blog",
     template: "%s | Simple Blog",
